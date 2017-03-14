@@ -1,0 +1,41 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>UmengDemo</title>
+<script type="text/javascript" src="Umeng.js"></script>
+<script type="text/javascript">
+	function deviceId(obj) {
+		document.getElementById("DeviceId").innerHTML = obj;
+	}
+	function eventWithParameters() {
+		var eventData = new Object();
+		eventData.name = "aaa";
+		eventData.age = 17;
+		MobclickAgent.onEventWithParameters('EventParameters', eventData);
+	}
+	function eventWithCounter() {
+		var eventCounter = new Object();
+		eventCounter.name = "key";
+		eventCounter.age = 17;
+		MobclickAgent.onEventWithCounter('EventCounter', eventCounter, '12');
+	}
+	function onCCEvent() {
+		var eventArray = new Array();
+		eventArray[0] = "arr1";
+		eventArray[1] = "arr2";
+		eventArray[2] = "arr3"
+		MobclickAgent.onCCEvent(eventArray, 1, "eventlabel");
+
+	}
+</script>
+</head>
+<body>
+	<br />
+	<br />
+	<input type="button" value="sendTradeInfo"
+		onclick="sendTradeInfo('0', '100', '167301', '方正富邦保险', '方正富邦基金管理有限公司')" />
+	<br />
+	<input type="button" value="shouldGetPageExistData" onclick="shouldGetPageExistData('testPage')" />
+	<br />
+</body>
+</html>
